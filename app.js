@@ -32,6 +32,14 @@
     iofi: () => mono('M60 10C30 10 6 32 6 60c0 30 24 50 52 50 14 0 18-10 11-18-6-8 1-18 13-18h18c13 0 17-12 15-21C112 30 90 10 60 10Z'
       + el(33, 82, 9, 9) + el(33, 44, 9, 9) + el(60, 30, 9, 9) + el(88, 44, 9, 9) + el(62, 62, 8, 8)), /* blob runs anticlockwise, so its holes are clockwise */
     baelz: () => mono(rr(14, 14, 92, 92, 20) + el(38, 38, 8, 8, 1) + el(82, 38, 8, 8, 1) + el(60, 60, 8, 8, 1) + el(38, 82, 8, 8, 1) + el(82, 82, 8, 8, 1), 'rotate(10 60 60)'),
+    mela: () => mono(rr(32, 42, 50, 70, 16) + rr(46, 26, 22, 18, 4) + 'M68 30L98 24V32L68 38Z' + el(57, 54, 5, 5, 1) + 'M42 70V90H72V70Z',
+      '', '<path d="M46 35Q20 35 20 66" fill="none" stroke="#101014" stroke-width="6" stroke-linecap="round"/>'),
+    sopia: () => mono(rr(44, 44, 32, 32, 7) + rr(4, 49, 34, 22, 3) + rr(82, 49, 34, 22, 3) + 'M36 57H46V63H36Z' + 'M74 57H84V63H74Z' + el(60, 24, 8, 8)
+      + el(60, 60, 5.5, 5.5, 1) + 'M12 53V67H14.6V53Z' + 'M20 53V67H22.6V53Z' + 'M28 53V67H30.6V53Z' + 'M90 53V67H92.6V53Z' + 'M98 53V67H100.6V53Z' + 'M106 53V67H108.6V53Z',
+      'rotate(-20 60 60)', '<path d="M60 44V30" fill="none" stroke="#101014" stroke-width="5" stroke-linecap="round"/>'),
+    tsuzuri: () => mono(rr(8, 26, 104, 72, 12) + 'M16 36L16 45L60 80L104 45L104 36L60 70Z'),
+    kyoko: () => mono('M14 48H52L96 22V98L52 72H14Z' + 'M26 72H40V96H26Z',
+      'translate(-6 0)', line('M104 44Q114 60 104 76') + line('M108 32Q124 60 108 88')),
     hajime: () => mono(
       el(60, 66, 43, 46) + el(17, 80, 8, 15) + el(103, 80, 8, 15) + el(44, 112, 13, 6.5) + el(76, 112, 13, 6.5)
       + el(60, 87, 29, 23, 1) + 'M54 54L60 62L66 54Z'
@@ -44,15 +52,22 @@
     { id: 'sora', unit: 'hololive Generation 0', bg: '#7fe9ff' },
     { id: 'iofi', unit: 'hololive AREA15', bg: '#ff8cc3' },
     { id: 'baelz', unit: 'hololive -Promise-', bg: '#b997ff' },
-    { id: 'hajime', unit: 'ReGLOSS', bg: '#ffe14a' }
+    { id: 'hajime', unit: 'ReGLOSS', bg: '#ffe14a' },
+    { id: 'mela', name: 'Achichi Mela', unit: 'ASOBI★MAWARI-TAI!', bg: '#ffffff' },
+    { id: 'sopia', name: 'Sorashina Sopia', unit: 'ASOBI★MAWARI-TAI!', bg: '#7fe9ff' },
+    { id: 'tsuzuri', name: 'Suzuna Tsuzuri', unit: 'ASOBI★MAWARI-TAI!', bg: '#ff8cc3' },
+    { id: 'kyoko', name: 'Hyakuto Kyoko', unit: 'ASOBI★MAWARI-TAI!', bg: '#ffe14a' }
   ];
+  /* top row: the main event talents; bottom row: the ASOBI★MAWARI-TAI! members */
+  const card = (t, i) => {
+    const name = t.name || byId[t.id].en;
+    return `<li class="frame" style="--c:${t.bg}">
+      <div class="frame-in"><div class="g-art" role="img" aria-label="${name} icon">${ICON[t.id](t.bg)}</div></div>${heartPair(i > 1)}
+      <div class="plate"><h3${name.length > 13 ? ' class="long"' : ''}>${name}</h3><p>${t.unit}</p></div></li>`;
+  };
   safe(() => {
-    $('#lineup').innerHTML = LINEUP.map((t, i) => {
-      const m = byId[t.id];
-      return `<li class="frame" style="--c:${t.bg}">
-        <div class="frame-in"><div class="g-art" role="img" aria-label="${m.en} icon">${ICON[t.id](t.bg)}</div></div>${heartPair(i > 1)}
-        <div class="plate"><h3>${m.en}</h3><p>${t.unit}</p></div></li>`;
-    }).join('');
+    $('#lineup').innerHTML = LINEUP.slice(0, 4).map(card).join('');
+    $('#lineup2').innerHTML = LINEUP.slice(4).map(card).join('');
   });
 
   /* ---------- guest performers: 2 DJs, 2 dancers (placeholder names, drawn here) ---------- */
