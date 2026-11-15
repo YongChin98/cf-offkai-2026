@@ -63,7 +63,7 @@
     const name = t.name || byId[t.id].en;
     return `<li class="frame" style="--c:${t.bg}">
       <div class="frame-in"><div class="g-art" role="img" aria-label="${name} icon">${ICON[t.id](t.bg)}</div></div>${heartPair(i > 1)}
-      <div class="plate"><h3${name.length > 13 ? ' class="long"' : ''}>${name}</h3><p>${t.unit}</p></div></li>`;
+      <div class="plate" style="--n:${name.length};--u:${t.unit.length}"><h3>${name}</h3><p>${t.unit}</p></div></li>`;
   };
   safe(() => {
     $('#lineup').innerHTML = LINEUP.slice(0, 4).map(card).join('');
