@@ -88,10 +88,10 @@
   /* ---------- good to know ---------- */
   const FAQ = [
     ['Is this an official hololive event?', 'No. It is a fan-organised meetup, not affiliated with COVER Corp. We follow their fan creation guidelines.'],
-    ['Can I buy a ticket at the door?', 'No. Entry is by registration and payment only, capped at 200 guests.'],
+    ['Can I walk in without registration?', 'No. Entry is by registration on first come first served basic.'],
     ['Where is the venue?', 'Millennium Ballroom at Tribeca Serviced Hotel by Millennium. <a class="map-link" href="https://maps.app.goo.gl/WSB4JB5aYCrnsVKD7" target="_blank" rel="noopener">Open in Google Maps</a> for directions.'],
-    ['Is food included?', 'Yes: light bites and soft drinks. Dietary needs, including halal, are part of the caterer planning.'],
-    ['When will the gate open?', 'Doors open at 7:00 PM for ticket check and lanyards. The programme starts at 7:30 PM, so arrive early to avoid the queue.']
+    ['Is cosplay allowed?', 'Yes! Cosplay is welcome. Feel free to dress up as your favourite character and join the fun!'],
+    ['When will the gate open?', 'Doors open at 7:00 PM for ticket check and lanyards. The event starts at 7:30 PM.']
   ];
   safe(() => {
     $('#bubbles').innerHTML = FAQ.map(b =>
@@ -112,7 +112,7 @@
     [160, '21:40', 'DJ party: DJ Mirai', 'DJ', '#28dcff'],
     [175, '21:55', 'Closing, group photo, Karaoke Party reminder', 'Stage', '#ff8cc3'],
     [200, '22:20', 'Free mingling and photos', 'Social', '#ffffff'],
-    [240, '23:00', 'Event ends. See you at Comic Fiesta tomorrow!', 'End', '#ffe14a']
+    [240, '23:00', 'Event ends.', 'End', '#ffe14a']
   ];
   safe(() => {
     $('#departures').innerHTML = SHOW.map((s, i) =>
@@ -139,7 +139,6 @@
       eta.textContent = SHOW[idx][2];
     } else {
       head.textContent = 'Thanks for coming';
-      eta.textContent = 'See you at Comic Fiesta';
     }
   }
   safe(() => { updateBoard(); setInterval(updateBoard, 15000); });
@@ -225,7 +224,6 @@
   addEventListener('resize', measure);
 
   /* ---------- boot ---------- */
-  safe(() => $('#joinBtn').addEventListener('click', e => e.preventDefault()));
   measure();
   addEventListener('load', () => {
     measure();

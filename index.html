@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Sedgwick+Ave+Display&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=64">
+<link rel="stylesheet" href="style.css?v=72">
 </head>
 <body>
 <a class="skip" href="#stage">Skip to the event</a>
@@ -39,7 +39,7 @@
       <img class="logo" src="img/logo-event.webp" width="1673" height="1048" alt="Super Karaoke Pre-Offkai">
       <div class="hero-text">
       <p class="tagline">The night before Comic Fiesta 2026!</p>
-      <p class="lede">An unofficial fan meetup for hololive fans: food, covers, a lucky draw and a party with two DJs and two dancers at Millennium Ballroom, Tribeca Serviced Hotel by Millennium, Friday 18 December.</p>
+      <p class="lede">An unofficial fan meetup for hololive fans: food, performances, lucky draw and party with lots of fun at Millennium Ballroom, Tribeca Serviced Hotel by Millennium, Friday 18 December.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#terminus" data-go="terminus">Register to join <span data-icon="arrow"></span></a>
         <a class="btn" href="#timetable" data-go="timetable">See the timetable</a>
@@ -54,11 +54,11 @@
 
     <div class="hero-cast">
       <div class="cast-group">
-        <p class="pill">hololive Meet SUPER KARAOKE PARTY, 19 and 20 Dec</p>
+        <div class="cast-head"><img class="cast-art" hidden src="img/art-super.webp" width="400" height="400" alt="Illustration of a marshmallow-headed fan with glow sticks, by GreenTee"><div><p class="pill">hololive Meet SUPER KARAOKE PARTY, 19 and 20 Dec</p><a class="art-by" hidden href="https://x.com/GreenTee_8488" target="_blank" rel="noopener">Art by GreenTee <span aria-hidden="true">↗</span></a></div></div>
         <ul class="hero-frames" id="lineup" aria-label="Main event lineup"></ul>
       </div>
       <div class="cast-group">
-        <p class="pill pill-alt">hololive Meet ASOBI★MAWARI-TAI!</p>
+        <div class="cast-head"><img class="cast-art" src="img/art-asobi.webp" width="400" height="400" alt="Chibi illustration of ASOBI★MAWARI-TAI! by もちずみ"><div><p class="pill pill-alt">hololive Meet ASOBI★MAWARI-TAI!</p><a class="art-by" href="https://x.com/izuuumi831" target="_blank" rel="noopener">Art by もちずみ <span aria-hidden="true">↗</span></a></div></div>
         <ul class="hero-frames" id="lineup2" aria-label="ASOBI★MAWARI-TAI! members"></ul>
       </div>
     </div>
@@ -71,13 +71,13 @@
     <span class="deco" data-deco="heartpair" style="left:38%;top:14%;--s:58px"></span>
     <h2 id="h-about" class="mega">THE<br>NIGHT<br>BEFORE</h2>
     <div class="about-copy">
-      <p class="big">A 3.5-hour meetup for 180 to 200 hololive fans, one night before the big weekend.</p>
-      <p>Comic Fiesta 2026 brings hololive Meet SUPER KARAOKE PARTY to Kuala Lumpur on 19 and 20 December, with Tokino Sora, Airani Iofifteen, Hakos Baelz, Todoroki Hajime and the four members of ASOBI★MAWARI-TAI!: Achichi Mela, Sorashina Sopia, Suzuna Tsuzuri and Hyakuto Kyoko. The Pre-Offkai warms the community up: meet fellow fans, eat, watch two cover performances, try your luck at the lucky draw, then dance through a back-to-back DJ set of hololive songs and anisong remixes.</p>
-      <p>Everyone gets an event lanyard with the key visual, made to wear to the main event the next day.</p>
+      <p class="big">A fan gathering and meetup for fellow hololive fans, one night before the big weekend.</p>
+      <p>There is hololive Meet SUPER KARAOKE PARTY at Kuala Lumpur on 19 and 20 December, with Tokino Sora, Airani Iofifteen, Hakos Baelz, Todoroki Hajime and hololive Meet of the four members of ASOBI★MAWARI-TAI!: Achichi Mela, Sorashina Sopia, Suzuna Tsuzuri and Hyakuto Kyoko. The Pre-Offkai warms the community up: meet fellow fans, eat, enjoy the performances, try your luck at the lucky draw, then dance through a back-to-back DJ set of hololive songs and anisong remixes.</p>
+      <p>Everyone will receive an event lanyard with the key visual, made to wear to the main event the next day.</p>
     </div>
     <dl class="facts frame-card">
       <div><dt>Date</dt><dd>Friday, 18 December 2026</dd></div>
-      <div><dt>Time</dt><dd>7:30 PM to 11:00 PM<br><small>Doors open 7:00 PM</small></dd></div>
+      <div><dt>Time</dt><dd>7:30 PM to 10:30 PM<br><small>Doors open 7:00 PM</small></dd></div>
       <div><dt>Venue</dt><dd>Millennium Ballroom<br><small>Tribeca Serviced Hotel by Millennium</small><a class="map-link" href="https://maps.app.goo.gl/WSB4JB5aYCrnsVKD7" target="_blank" rel="noopener">Open in Google Maps</a></dd></div>
     </dl>
   </section>
@@ -102,7 +102,6 @@
     <div class="times-side">
       <h2 id="h-times" class="mega">TIME<wbr>TABLE</h2>
       <div class="clock" id="clock" role="img" aria-label="Clock showing Malaysia time"></div>
-      <p class="clock-note">Malaysia time (UTC+8), Friday 18 December 2026. Tentative; the final run sheet is set on 15 Dec.</p>
     </div>
     <ol class="departures" id="departures" aria-label="Run of show"></ol>
   </section>
@@ -113,24 +112,22 @@
     <span class="deco" data-deco="sparkle" style="left:30%;top:13%;--s:30px"></span>
     <div class="pass-intro">
       <h2 id="h-pass" class="mega">GET<br>IN</h2>
-      <p>One ticket type, one price, limited to 200. No walk-ins.</p>
     </div>
     <div class="ticket-one">
       <div class="ticket-wrap">
         <div class="ticket" style="--tc:#28dcff">
           <p class="t-name">Pre-Offkai Ticket</p><p class="t-jp">プレオフ会チケット</p>
-          <p class="t-price">RM 120<small>proposed</small></p>
-          <ul class="t-perks"><li data-perk>Entry to the full night</li><li data-perk>Event lanyard doorgift</li><li data-perk>Light bites and soft drinks</li><li data-perk>One lucky draw entry</li></ul>
+          <p class="t-price">RM 110</p>
+          <ul class="t-perks"><li data-perk>Entry to the full night</li><li data-perk>Event lanyard doorgift</li><li data-perk>Dinner, desserts and drinks</li><li data-perk>One lucky draw entry</li></ul>
           <a class="btn btn-primary btn-wide" href="#terminus" data-go="terminus">Register</a>
           <p class="t-serial">PO-1218-KL</p>
         </div>
       </div>
-      <p class="t-note">Price is a working figure and may change. Payment platform fees may apply. Non-transferable and non-refundable; the name on your form is checked at the door.</p>
     </div>
     <ol class="steps" aria-label="How to register">
-      <li><b>22 Nov</b><span>Registration opens. Fill in the Google Form and pay through the payment link.</span></li>
+      <li><b>20 Nov</b><span>Registration opens. Fill in the Google Form and pay through the payment link.</span></li>
       <li><b>Payment check</b><span>Your entry is confirmed once payment is verified.</span></li>
-      <li><b>15 Dec</b><span>Registration closes. Final run sheet goes out.</span></li>
+      <li><b>12 Dec</b><span>Registration closes. Final run sheet goes out.</span></li>
       <li><b>18 Dec</b><span>Show your name at the door, collect your lanyard, come in.</span></li>
     </ol>
   </section>
@@ -140,6 +137,17 @@
     <div class="sign"><span class="code">06</span><span class="sign-name"><b>Info</b><small>よくある質問</small></span></div>
     <span class="deco" data-deco="heartpair" style="left:2%;top:14%;--s:54px"></span>
     <h2 id="h-voices" class="mega">GOOD<br>TO<br>KNOW</h2>
+    <aside class="menu-card" aria-labelledby="h-menu">
+      <h3 id="h-menu">Food &amp; drinks</h3>
+      <div class="menu-group"><h4>Main</h4><ul>
+        <li>Butter Herbs Rice with Raisins</li><li>Mushroom Aglio Olio Pasta</li><li>Signature Herbs Roasted Chicken</li><li>Baked Fish Fillet with Lemon Caper Butter Sauce</li><li>Beef Meatball in Tomato Sauce</li><li>Garlic Butter Sautéed Vegetable and Mushrooms</li></ul></div>
+      <div class="menu-group"><h4>Desserts</h4><ul>
+        <li>Bread &amp; Butter Pudding with Vanilla Sauce</li><li>Mini Chocolate Cupcakes</li><li>Fresh Seasonal Fruits</li></ul></div>
+      <div class="menu-group"><h4>Beverages</h4><ul>
+        <li>Fruit Punch</li><li>Lemon Infused Water</li><li>Hot Coffee &amp; Tea</li></ul></div>
+      <p class="menu-halal">All food and drink is halal.</p>
+      <p class="menu-note">Menu is subject to change.</p>
+    </aside>
     <ul class="qa-grid" id="bubbles"></ul>
   </section>
 
@@ -150,8 +158,8 @@
     <span class="deco" data-deco="sparkle" style="left:3%;top:46%;--s:30px"></span>
     <div class="end-main">
       <h2 id="h-end" class="mega">SEE YOU<br>ON THE<br>18TH!</h2>
-      <a class="join" href="#" id="joinBtn"><span data-icon="chat" data-size="34"></span><span>Register now</span></a>
-      <p class="end-note">Registration opens 22 Nov. This link is a placeholder: swap in the Google Form in <code>index.html</code>.</p>
+      <a class="join" href="https://forms.gle/SapvMHxJnf3B2VR36" target="_blank" rel="noopener" id="joinBtn"><span data-icon="chat" data-size="34"></span><span>Register now</span></a>
+      <p class="end-note">Registration opens 20 Nov.</p>
     </div>
     <div class="end-side">
       <section class="rules frame-card" aria-labelledby="h-rules">
@@ -160,13 +168,14 @@
           <li>Be kind. We are all here for the same reason.</li>
           <li>Entry is by registration only. No walk-ins.</li>
           <li>Ask before taking close-up photos of other guests.</li>
-          <li>The night ends at 11 PM. Plan your ride home.</li>
+          <li>The venue closed at 11 PM. Plan your ride home.</li>
+          <li>Enjoy and have fun at the party.</li>
         </ol>
       </section>
       <nav class="socials" aria-label="Grá-VT on the web"><p>Follow Grá-VT</p><ul><li><a href="https://gra-vt.my" target="_blank" rel="noopener"><b>Website</b><span>gra-vt.my</span></a></li><li><a href="https://x.com/gravtmy" target="_blank" rel="noopener"><b>X</b><span>@gravtmy</span></a></li><li><a href="https://www.instagram.com/gravt.my" target="_blank" rel="noopener"><b>Instagram</b><span>@gravt.my</span></a></li><li><a href="https://www.facebook.com/people/Gr%C3%A1-VT/61577441224838/?sk=about" target="_blank" rel="noopener"><b>Facebook</b><span>Grá-VT</span></a></li><li><a href="https://discord.gg/SeQeWczynT" target="_blank" rel="noopener"><b>Discord</b><span>Join our server</span></a></li></ul></nav>
       <footer class="credits">
         <p>An unofficial fan-organised event, not affiliated with or endorsed by COVER Corp. hololive and related names and characters are trademarks and copyrights of COVER Corp. Portraits here are original stand-ins.</p>
-        <p>© 2026 Grá-VT</p>
+        <p>ASOBI★MAWARI-TAI! art by <a href="https://x.com/izuuumi831" target="_blank" rel="noopener">もちずみ</a>. © 2026 Grá-VT</p>
       </footer>
     </div>
   </section>
@@ -182,7 +191,7 @@
 <script src="scroll.js?v=5"></script>
 <script src="art.js?v=5"></script>
 <script src="art2.js?v=7"></script>
-<script src="app.js?v=26"></script>
+<script src="app.js?v=29"></script>
 <script src="sparks.js?v=2"></script>
 </body>
 </html>

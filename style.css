@@ -183,9 +183,15 @@ a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: .2em;
 .board-eta i { font: 800 .42em/1 var(--body); color: var(--violet-d); margin-right: .3em; }
 .board-meta { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: .8rem; font-weight: 700; }
 .hero-cast { display: grid; gap: 3vh; align-content: center; margin-top: 5vh; }
-.cast-group { display: grid; gap: 1.6vh; justify-items: start; }
+.cast-group { display: grid; gap: 1.2vh; justify-items: start; }
+.cast-head { display: flex; align-items: center; gap: 14px; padding-bottom: 14px; }
+.cast-head > div { display: grid; gap: 6px; justify-items: start; }
+.cast-art { width: clamp(52px, 8vh, 78px); height: auto; aspect-ratio: 1; border: 4px solid var(--ink); border-radius: 50%; background: #fff; box-shadow: 4px 4px 0 var(--ink); transform: rotate(-4deg); flex: none; }
+.cast-group + .cast-group .cast-art { transform: rotate(4deg); }
+.art-by { font: 700 .72rem/1 var(--body); color: var(--ink); background: #fff; border: 2px solid var(--ink); border-radius: 99px; padding: 4px 9px; text-decoration: none; transition: transform .2s var(--ease); }
+.art-by:hover { transform: translate(-1px, -1px) rotate(-2deg); background: var(--yellow); }
 .pill-alt { background: var(--cyan); }
-.hero-frames .frame { --fw: clamp(120px, min(15vw, 19vh), 240px); height: calc(var(--fw) * 1.32); }
+.hero-frames .frame { --fw: clamp(120px, min(15vw, 16vh), 240px); height: calc(var(--fw) * 1.32); }
 .hero-frames { display: flex; gap: 22px; align-items: flex-start; }
 .hero-frames .frame:nth-child(odd) { transform: rotate(-2deg); }
 .hero-frames .frame:nth-child(even) { margin-top: 2.2vh; transform: rotate(2deg); }
@@ -281,6 +287,15 @@ a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: .2em;
 .steps span { font-weight: 600; font-size: .98rem; line-height: 1.45; max-width: 34ch; }
 
 /* ---------- 6 info ---------- */
+.menu-card { flex: none; width: 23rem; align-self: center; background: #fff; border: 4px solid var(--ink); border-radius: 14px; padding: 18px 22px 20px; box-shadow: 8px 8px 0 var(--yellow); transform: rotate(-1.2deg); display: grid; gap: 12px; }
+.menu-tag { font: 800 .72rem/1 var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--violet-d); display: flex; gap: 8px; align-items: baseline; }
+.menu-tag small { font-weight: 700; letter-spacing: 0; color: var(--ink); }
+.menu-card h3 { font: 400 2.1rem/1 var(--tag); color: var(--ink); text-transform: uppercase; }
+.menu-group h4 { display: inline-block; font: 800 .74rem/1 var(--body); letter-spacing: .08em; text-transform: uppercase; background: var(--ink); color: var(--cyan); padding: 4px 9px; border-radius: 4px; margin-bottom: 6px; }
+.menu-group li { font-weight: 600; font-size: .9rem; line-height: 1.4; padding: 2px 0 2px 16px; position: relative; }
+.menu-group li::before { content: "♪"; position: absolute; left: 0; color: var(--pink); font-weight: 800; }
+.menu-note { font: 600 .74rem/1.3 var(--body); font-style: italic; margin-top: -4px; }
+.menu-halal { font: 700 .8rem/1.3 var(--body); border-top: 3px dashed var(--ink); padding-top: 10px; }
 .qa-grid { display: grid; grid-auto-flow: column; grid-template-rows: repeat(2, auto); grid-auto-columns: 21rem; gap: 26px; align-items: start; }
 .qa { background: #fff; border: 4px solid var(--ink); border-radius: 12px; padding: 16px 20px 18px; box-shadow: 6px 6px 0 var(--violet); }
 .qa:nth-child(odd) { transform: rotate(-.8deg); }
@@ -386,6 +401,7 @@ a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: .2em;
   .dep.is-next, .dep.is-live { margin: 2px -16px; padding: 3px 16px; }
   .ticket-one { width: min(300px, 100%); }
   .steps { width: 100%; }
+  .menu-card { width: 100%; transform: none; }
   .qa-grid { grid-auto-flow: row; grid-template-rows: none; grid-auto-columns: 100%; width: 100%; gap: 22px; }
   .qa:nth-child(n+3):nth-child(-n+4) { margin-top: 0; }
   .join { font-size: 1.5rem; min-height: 68px; padding: 0 28px 0 22px; }
@@ -398,7 +414,7 @@ a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: .2em;
   .cta-row, .socials ul { justify-content: center; }
   .hero-frames, .guest-frames { justify-content: center; }
   .socials, .credits { justify-items: center; }
-  .frame-card, .qa, .ticket, .board, .departures, .steps { text-align: left; }
+  .frame-card, .qa, .menu-card, .ticket, .board, .departures, .steps { text-align: left; }
   .ticket-one { justify-items: center; }
   .route { left: 0; }
   #routeList button span { display: none; }
