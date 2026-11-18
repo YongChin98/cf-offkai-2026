@@ -238,6 +238,9 @@ a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: .2em;
 .guest-frames .frame:nth-child(even) { margin-top: 5vh; transform: rotate(2deg); }
 .guest-frames .frame:nth-child(n+3) > .heartpair { left: auto; right: -16px; }
 .gframe { --fw: clamp(172px, 14vw, 220px); }
+.g-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.plate a { color: var(--cyan); font-weight: 800; white-space: nowrap; }
+.is-tba .g-art { inset: 14% 22% 40%; }
 .g-art { position: absolute; inset: 12% 14% 36%; display: grid; place-items: center; }
 .g-art svg { width: 100%; height: 100%; }
 
@@ -247,6 +250,10 @@ a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: .2em;
 .clock { width: min(14rem, 25vh); aspect-ratio: 1; }
 .clock-note { font-size: .85rem; font-weight: 600; max-width: 30ch; color: #d4d3ea; }
 .departures { width: min(46rem, 58vw); flex: none; background: rgba(255, 255, 255, .06); border: 4px solid var(--cyan); border-radius: 14px; box-shadow: 8px 8px 0 var(--pink); padding: 8px 24px; }
+.tba { align-self: center; display: grid; gap: 14px; justify-items: start; padding: 28px 32px; }
+.tba h3 { font: 400 clamp(2.4rem, 7vh, 4rem)/1 var(--tag); color: var(--yellow); text-transform: uppercase; }
+.tba p { font-weight: 600; font-size: 1.05rem; line-height: 1.5; max-width: 34ch; color: #fff; }
+.tba a { color: var(--cyan); font-weight: 800; }
 .dep { display: grid; grid-template-columns: 5.4rem 1fr auto; align-items: center; gap: 18px; padding: 3px 0; border-bottom: 2px dashed rgba(255, 255, 255, .25); }
 .dep:last-child { border-bottom: 0; }
 .dep .t { color: var(--cyan); font: 900 1.45rem/1.2 var(--body); font-variant-numeric: tabular-nums; }

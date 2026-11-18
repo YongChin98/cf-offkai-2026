@@ -70,19 +70,16 @@
     $('#lineup2').innerHTML = LINEUP.slice(4).map(card).join('');
   });
 
-  /* ---------- guest performers: 2 DJs, 2 dancers (placeholder names, drawn here) ---------- */
-  const dj = `<svg viewBox="0 0 120 120" aria-hidden="true"><path d="M30 64a30 30 0 0 1 60 0" fill="none" stroke="#101014" stroke-width="9" stroke-linecap="round"/><rect x="20" y="58" width="16" height="30" rx="8" fill="#ff4fa0" stroke="#fff" stroke-width="4"/><rect x="84" y="58" width="16" height="30" rx="8" fill="#ff4fa0" stroke="#fff" stroke-width="4"/><circle cx="60" cy="86" r="26" fill="#101014"/><circle cx="60" cy="86" r="19" fill="none" stroke="#7a30f8" stroke-width="2"/><circle cx="60" cy="86" r="12" fill="none" stroke="#7a30f8" stroke-width="2"/><circle cx="60" cy="86" r="6" fill="#ffd23c"/></svg>`;
-  const dancer = `<svg viewBox="0 0 120 120" aria-hidden="true"><g fill="none" stroke="#101014" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"><path d="M60 46L58 76L40 104M58 76L80 100"/><path d="M59 54L34 36M59 54L88 22"/></g><circle cx="60" cy="32" r="12" fill="#ffd23c" stroke="#101014" stroke-width="5"/><path d="M92 10l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#ff4fa0" stroke="#fff" stroke-width="2"/></svg>`;
+  /* ---------- guest performers: Kokoa confirmed, the rest to be announced ---------- */
+  const qMark = `<svg viewBox="0 0 120 120" aria-hidden="true"><path d="M40 44a20 20 0 1 1 30 17c-8 5-10 8-10 17" fill="none" stroke="#101014" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><circle cx="60" cy="102" r="7.5" fill="#101014"/></svg>`;
   const GUESTS = [
-    { name: 'DJ Kohaku', role: 'DJ', note: 'hololive and anisong remixes', art: dj, bg: '#7fe9ff' },
-    { name: 'DJ Mirai', role: 'DJ', note: 'J-pop and club edits', art: dj, bg: '#ffe14a' },
-    { name: 'Rina', role: 'Dancer', note: 'Idol choreography', art: dancer, bg: '#ff8cc3' },
-    { name: 'Hana', role: 'Dancer', note: 'Dance cover', art: dancer, bg: '#b997ff' }
+    { name: 'Kokoa', photo: 'img/guest-kokoa.webp', alt: 'Kokoa, a cosplayer with white twin tails and a holographic jacket', lines: 'Oshi: 🐧<br><a href="https://www.instagram.com/qb_kokoa/" target="_blank" rel="noopener">@qb_kokoa ↗</a>', bg: '#7fe9ff' },
+    { name: 'To be announced', art: qMark, lines: 'More guests soon', bg: '#ffe14a', tba: true }
   ];
   safe(() => {
-    $('#guestList').innerHTML = GUESTS.map((g, i) => `<li class="frame gframe" style="--c:${g.bg}">
-      <div class="frame-in"><div class="g-art">${g.art}</div></div>${heartPair(i > 1)}
-      <div class="plate"><h3>${g.name}</h3><p>${g.role}<br>${g.note}</p></div></li>`).join('');
+    $('#guestList').innerHTML = GUESTS.map((g, i) => `<li class="frame gframe${g.tba ? ' is-tba' : ''}" style="--c:${g.bg}">
+      <div class="frame-in">${g.photo ? `<img class="g-photo" src="${g.photo}" width="500" height="660" alt="${g.alt}">` : `<div class="g-art">${g.art}</div>`}</div>${heartPair(i > 1)}
+      <div class="plate"><h3>${g.name}</h3><p>${g.lines}</p></div></li>`).join('');
   });
 
   /* ---------- good to know ---------- */
@@ -90,6 +87,7 @@
     ['Is this an official hololive event?', 'No. It is a fan-organised meetup, not affiliated with COVER Corp. We follow their fan creation guidelines.'],
     ['Can I walk in without registration?', 'No. Entry is by registration on first come first served basic.'],
     ['Where is the venue?', 'Millennium Ballroom at Tribeca Serviced Hotel by Millennium. <a class="map-link" href="https://maps.app.goo.gl/WSB4JB5aYCrnsVKD7" target="_blank" rel="noopener">Open in Google Maps</a> for directions.'],
+    ['Is any parking available at the venue?', 'Yes, the hotel has parking. Daytime parking is <b>RM5 per hour</b>. After 6:00 PM, it is a flat <b>RM15 per entry</b>, which is the rate that applies to our evening event. Hotel rates may change.'],
     ['Is cosplay allowed?', 'Yes! Cosplay is welcome. Feel free to dress up as your favourite character and join the fun!'],
     ['When will the gate open?', 'Doors open at 7:00 PM for ticket check and lanyards. The event starts at 7:30 PM.']
   ];
@@ -114,10 +112,7 @@
     [200, '22:20', 'Free mingling and photos', 'Social', '#ffffff'],
     [240, '23:00', 'Event ends.', 'End', '#ffe14a']
   ];
-  safe(() => {
-    $('#departures').innerHTML = SHOW.map((s, i) =>
-      `<li class="dep" data-i="${i}" style="--c:${s[4]}"><span class="t">${s[1]}</span><span class="n">${s[2]}</span><span class="h"><i></i>${s[3]}</span></li>`).join('');
-  });
+  /* timetable is to be announced: the SHOW rows are not rendered for now */
 
   function fmtEta(ms) {
     const s = Math.floor(ms / 1000), d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60);
